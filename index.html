@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的卡片小工具</title>
-  <link rel="stylesheet" href="styles/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <meta charset="UTF-8">
+  <title>AI金句生成器</title>
+  <link rel="stylesheet" href="styles/week4.css">
 </head>
 <body>
-  <h1>📇 我的卡片列表</h1>
-  <div id="card-list">加载中...</div>
-
-  <script src="scripts/main.js"></script>
+  <div class="container">
+    <h1>✨ AI金句生成器 ✨</h1>
+    <input id="api-key" placeholder="请输入你的 OpenRouter API Key">
+    <input id="topic" placeholder="请输入一个主题，比如“亲密关系”">
+    <button onclick="generateQuote()">生成金句</button>
+    <div id="result"></div>
+  </div>
+  <script src="scripts/week4.js"></script>
 </body>
 </html>

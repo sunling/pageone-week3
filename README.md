@@ -1,96 +1,61 @@
-# Page One Workshop - Week 3 🎉
+# AI 金句生成器 (Page One Workshop 第四节课示例项目)
 
-欢迎来到第三节课！这次我们将用 Supabase 来实现一个最简单的数据驱动网页：
-一个可以从数据库里读取卡片内容并显示的小工具。
-
----
-
-## ✅ 我们会学到什么？
-
-- 🧠 了解 Supabase：开箱即用的数据库，像 Google Sheet 升级版
-- 🧱 创建一张表：存放卡片数据（标题、内容、作者）
-- 🔗 在网页中接入 Supabase JS 库
-- 🧭 实现动态读取并显示卡片
-- ✨ 感受“网页 + 数据 = 迷你应用”的魔法！
+这个小项目展示了如何通过 HTML + JS 页面，直接调用 OpenRouter 的 API，从而生成一条中文金句。
 
 ---
 
-## 🚀 开始你的第三周练习
+## 🧠 本节课目标
 
-👇 请按照以下步骤操作：
-
-### 1. Fork 这个项目
-
-点击右上角的 `Fork`，将这个项目复制到你自己的 GitHub 帐号。
-
-### 2. 在 TRAE 打开项目
-
-- 打开 [https://trae.app](https://trae.app)
-- 选择「从 GitHub 导入」你刚刚 fork 的仓库
-- 开始编辑代码！
-
-### 3. 替换你的 Supabase 配置信息
-
-打开 `scripts/main.js`，将这两行替换为你自己项目的值：
-
-```js
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key';
-```
-
-👉 如何获取？进入 [Supabase 控制台](https://supabase.com/dashboard/project)，在左侧找到 Project Settings → API
-
-### 4. 本地预览（可选）
-
-如果你想在本地打开页面，可运行：
-
-```bash
-python3 -m http.server
-```
-
-打开浏览器访问：`http://localhost:8000`
+- 学会什么是 API 调用
+- 学会如何在网页中通过 `fetch()` 请求 AI 模型接口
+- 实践使用 OpenRouter 平台，调用大语言模型生成内容
+- 创建一个完全脱机可运行的小网页工具
+- 激发“网页 + AI = 可以做出有趣作品”的想象力
 
 ---
 
-## 🧪 表结构建议（在 Supabase 创建）
+## 🚀 使用方法
 
-表名：`cards`
-
-| 字段名   | 类型   | 备注       |
-|----------|--------|------------|
-| id       | int    | 主键，自增 |
-| title    | text   | 卡片标题   |
-| content  | text   | 正文内容   |
-| author   | text   | 作者       |
+1. 注册 OpenRouter：https://openrouter.ai
+2. 获取 API Key：https://openrouter.ai/keys
+   - 点击 “Create new key”
+   - 复制生成的 key，妥善保存
+3. 下载本项目，解压后双击 `index.html` 打开网页
+4. 输入你的 API Key 和一个主题，点击“生成金句”，即可看到结果！
 
 ---
 
-## 💡 想继续进阶？以下是一些你可以尝试的改进提示（Coding Agent Prompt）：
+## 📁 文件说明
 
-### 🧩 数据功能升级
-
-1. 添加一个表单，填写标题、内容和作者后，可以把卡片添加进 Supabase。
-2. 为每张卡片添加删除按钮，点击后将其从数据库中移除。
-3. 加一个下拉框，按作者筛选显示卡片。
-4. 给 `cards` 表添加 `created_at` 字段，并按时间倒序显示。
-
-### 🎨 样式与交互升级
-
-5. 加一个“加载中”动画效果，提示用户等待卡片加载。
-6. 改进卡片样式，加入圆角、阴影和 hover 效果。
-7. 让卡片正文支持 Markdown 格式（如加粗、换行、列表等）。
-
-### 🌐 部署与分享
-
-8. 在 README 中加上如何通过 GitHub Pages 免费发布网页的说明。
-9. 为卡片添加“复制链接”按钮，方便分享到社交平台。
-
-### 🧠 小工具拓展
-
-10. 增加一个搜索框，可按标题或正文关键词实时过滤卡片。
+- `index.html` 页面结构
+- `scripts/week4.js` 调用 OpenRouter API 的逻辑
+- `scripts/week4.css` 页面美化样式（多巴胺渐变色风格）
+- `README.md` 项目说明（当前文件）
 
 ---
 
-## 🧯 遇到问题？
+## ✨ Bonus：进阶探索建议
 
-欢迎在微信群里提问，祝你玩得开心 🎈
+如果你愿意，可以尝试加入更多功能，让你的网页更丰富有趣：
+
+1. **换一个 Prompt**  
+   修改 `script.js` 中的 prompt，比如改为“生成一个英文 motivational quote”或“一句旅行建议”。
+
+2. **改成对话模式**  
+   让用户和 AI 聊天：支持连续提问、追加内容。
+
+3. **支持多种模型选择**  
+   增加一个下拉菜单，选择使用不同模型（如 GPT-4、Claude、Mistral）。
+
+4. **加入复制按钮**  
+   生成金句后，一键复制内容到剪贴板。
+
+5. **保存历史记录**  
+   将用户生成的金句记录在 localStorage，刷新后仍可查看。
+
+6. **换个主题风格**  
+   改变颜色、布局或字体，让网页更符合你的审美。
+
+7. **部署到 GitHub Pages**  
+   让你的作品上线，通过网址分享给朋友！
+
